@@ -1,15 +1,31 @@
 * {
     margin: 0px;
     padding: 0px;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
 }
 
 .center {
     padding-left: calc(50% - 600px);
     padding-right: calc(50% - 600px);
-  }
+}
 
 body {
     background-color: hsla(216, 96%, 20%, 0.992);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 480px;
+    background-color: #C2F5FF;
+    height: 459px;
+    border-radius: 12px;
 }
 
 .difficult {
@@ -18,7 +34,7 @@ body {
         flex-direction: row;
         justify-content: center;
         gap: 26px;
-        margin-bottom: 67px;
+        padding-bottom: 67px;
     }
 
     &__items-block {
@@ -35,45 +51,37 @@ body {
         align-items: center;
         border-radius: 12px;
         background: #ffff;
-        font-weight: 400;
-        font-size: 48px;
-        line-height: 72px;
     }
 }
 
-
-
-.container {
-    display: flex;
-    justify-content: center;
-    width: 480px;
-    background-color: #C2F5FF;
-    height: 459px;
-    border-radius: 12px;
+.value {
+    font-size: 48px;
+    line-height: 72px;
+    color:#0080C1;
 }
 
-
 .dif-header {
-    width: 208px;
     color: #004980;
     font-size: 40px;
     line-height: 48px;
     text-align: center;
+    padding-top: 52px;
     margin-bottom: 48px;
     margin-left: 136px;
     margin-right: 136px;
+    
 }
-
 
 .button-container {
     display: flex;
-   justify-content: center;
+    justify-content: center;
 }
+
 .start-button {
     width: 246px;
     height: 50px;
     border-radius: 12px;
- color: #ffff;
- font-size: 24px;
+    color: #ffff;
+    font-size: 24px;
     background-color: #7AC100;
 }
