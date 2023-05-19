@@ -1,3 +1,15 @@
+@font-face {
+    font-family: "StratosSkyeng";
+    font-style: normal;
+    font-weight: 400;
+    /* поиск шрифта локально */
+    src: local("StratosSkyeng"),
+        /* загрузка woff2 */
+         url("/fonts/stratosskyengweb-regular.woff2") format("woff2"),
+         /* Если браузер не поддерживает woff2, загрузит woff */
+         url("/fonts/stratosskyengweb-regular.woff") format("woff");
+  }
+
 * {
     margin: 0px;
     padding: 0px;
@@ -51,6 +63,7 @@ body {
         align-items: center;
         border-radius: 12px;
         background: #ffff;
+        cursor: pointer;
     }
 }
 
@@ -69,6 +82,7 @@ body {
     margin-bottom: 48px;
     margin-left: 136px;
     margin-right: 136px;
+    font-family: 'StratosSkyeng';
     
 }
 
@@ -83,5 +97,7 @@ body {
     border-radius: 12px;
     color: #ffff;
     font-size: 24px;
+    font-family: 'StratosSkyeng';
     background-color: #7AC100;
+    cursor: pointer;
 }

@@ -1,16 +1,11 @@
+@charset "UTF-8";
 @font-face {
   font-family: "StratosSkyeng";
   font-style: normal;
   font-weight: 400;
   /* поиск шрифта локально */
-  src: local("StratosSkyeng"),
-      /* загрузка woff2 */
-       url("/fonts/stratosskyengweb-regular.woff2") format("woff2"),
-       /* Если браузер не поддерживает woff2, загрузит woff */
-       url("/fonts/stratosskyengweb-regular.woff") format("woff");
+  src: local("StratosSkyeng"), url("/fonts/stratosskyengweb-regular.woff2") format("woff2"), url("/fonts/stratosskyengweb-regular.woff") format("woff");
 }
-
-
 * {
   margin: 0px;
   padding: 0px;
@@ -30,7 +25,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 .container {
@@ -62,7 +56,7 @@ body {
   align-items: center;
   border-radius: 12px;
   background: white;
-  font-family: 'StratosSkyeng';
+  cursor: pointer;
 }
 
 .value {
@@ -80,13 +74,12 @@ body {
   margin-bottom: 48px;
   margin-left: 136px;
   margin-right: 136px;
-  font-family: 'StratosSkyeng';
+  font-family: "StratosSkyeng";
 }
 
 .button-container {
   display: flex;
   justify-content: center;
-  
 }
 
 .start-button {
@@ -95,6 +88,7 @@ body {
   border-radius: 12px;
   color: white;
   font-size: 24px;
+  font-family: "StratosSkyeng";
   background-color: #7AC100;
-  font-family: 'StratosSkyeng';
+  cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */
