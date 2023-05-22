@@ -1,9 +1,110 @@
-body {
-    background-color:#E5E5E5;
+@charset "UTF-8";
+@font-face {
+  font-family: "StratosSkyeng";
+  font-style: normal;
+  font-weight: 400;
+  /* поиск шрифта локально */
+  src: local("StratosSkyeng"), url("/fonts/stratosskyengweb-regular.woff2") format("woff2"), url("/fonts/stratosskyengweb-regular.woff") format("woff");
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
 }
 
+.center {
+  padding-left: calc(50% - 600px);
+  padding-right: calc(50% - 600px);
+}
+
+body {
+  background-color: hsla(216, 96%, 20%, 0.992);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .container {
-   display: flex;
-   justify-content: center;
+  display: flex;
+  justify-content: center;
+  width: 480px;
+  background-color: #C2F5FF;
+  height: 459px;
+  border-radius: 12px;
 }
+
+.difficult__values-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 26px;
+  padding-bottom: 67px;
+}
+.difficult__items-block {
+  display: flex;
+  justify-content: center;
+}
+.difficult__values-buttons {
+  background-color: #0080C1;
+  height: 96px;
+  width: 98px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  font-size: 48px;
+  line-height: 72px;
+  color: #0080C1;
+}
+
+.value {
+  font-size: 48px;
+  line-height: 72px;
+  color: #0080C1;
+}
+
+.dif-header {
+  color: #004980;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+  padding-top: 52px;
+  margin-bottom: 48px;
+  margin-left: 136px;
+  margin-right: 136px;
+  font-family: "StratosSkyeng";
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.start-button {
+  width: 246px;
+  height: 50px;
+  border-radius: 12px;
+  color: white;
+  font-size: 24px;
+  font-family: "StratosSkyeng";
+  background-color: #7AC100;
+  cursor: pointer;
+}
+
+.value_1 {
+  position: absolute;
+  top: 323px;
+}
+.value_2 {
+  position: absolute;
+  top: 323px;
+}
+.value_3 {
+  position: absolute;
+  top: 323px;
+}/*# sourceMappingURL=styles.css.map */
