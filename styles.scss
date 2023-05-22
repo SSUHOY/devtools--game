@@ -64,6 +64,9 @@ body {
         border-radius: 12px;
         background: #ffff;
         cursor: pointer;
+        font-size: 48px;
+        line-height: 72px;
+        color: #0080C1;
     }
 }
 
@@ -101,3 +104,19 @@ body {
     background-color: #7AC100;
     cursor: pointer;
 }
+
+.value {
+    &_1 {
+        position: absolute;
+        top: 323px;
+    }
+    &_2 {
+        position: absolute;
+        top: 323px;
+    }
+    &_3 {
+        position: absolute;
+        top: 323px;
+    }
+}
+

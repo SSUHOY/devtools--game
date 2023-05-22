@@ -57,6 +57,9 @@ body {
   border-radius: 12px;
   background: white;
   cursor: pointer;
+  font-size: 48px;
+  line-height: 72px;
+  color: #0080C1;
 }
 
 .value {
@@ -91,4 +94,17 @@ body {
   font-family: "StratosSkyeng";
   background-color: #7AC100;
   cursor: pointer;
+}
+
+.value_1 {
+  position: absolute;
+  top: 323px;
+}
+.value_2 {
+  position: absolute;
+  top: 323px;
+}
+.value_3 {
+  position: absolute;
+  top: 323px;
 }/*# sourceMappingURL=styles.css.map */
