@@ -8,6 +8,7 @@ const renderApp = () => {
         <form class="difficult__values-container">
             <legend class="dif-header">Выбери сложность</legend>
             <fieldset class="difficult__values-form">  
+            <div class = 'difficult__values'>
                     <label for="1" class="difficult__values-buttons">1
                     <input type="radio" value="1" id="1" class="value_1" name="difficult"/>
                     </label>
@@ -17,10 +18,11 @@ const renderApp = () => {
                     <label for="3" class="difficult__values-buttons">3
                     <input type="radio" value="3" id="3" class="value_3" name="difficult"/>
                     </label>
-            </fieldset>
-            <div class="button-container">
-                <button class="start-button">Старт</button>
             </div>
+                <div class = 'difficult__btn'>
+                <button class="start-button" id ='start'>Старт</button>
+                </div>
+            </fieldset>
         </form>
     </div>
 </section>
@@ -28,26 +30,34 @@ const renderApp = () => {
     appEl.innerHTML = appHtml;
 }
 
+
+
 renderApp();
 
 // Инициализация кнопки старт
-initStartBtn = () => {
-    const startButtons = document.querySelectorAll('.start-button')
+const initStartBtn = () => {
+    let btn = document.querySelector('.start-button')
 
-for (const startButton of startButtons) {
-    startButton.addEventListener('click', (event) => {
-        event.stopPropagation()
-        let selected = document.querySelector('input[type="radio"]:checked');
-console.log(selected.value);
-        if (selected.value === 1) {
-          console.log('Выбран первый уровень сложности');
+    btn.addEventListener('click', () => {
+        let rd1 = document.getElementById('1');
+        let rd2 = document.getElementById('2');
+        let rd3 = document.getElementById('3');
+        if (rd1.checked == true) {
+            renderGamePage_1();
+        } else if (rd2.checked == true) {
+            renderGamePage_2();
+        } else if (rd3.checked == true) {
+            renderGamePage_3();
+        } else {
+            alert('Уровень сложности не выбран');
         }
+
+
     });
 }
-    
-    
-}
+
 initStartBtn();
+
 
 
 // Рендер страницы игры, в зависимости от выбранной сложно
@@ -60,7 +70,7 @@ const renderGamePage_1 = () => {
 const renderGamePage_2 = () => {
     const appEl = document.getElementById('gameApp')
 
-const appHtml = "<h1>Второй уровень сложности</h2>"
+    const appHtml = "<h1>Второй уровень сложности</h2>"
     appEl.innerHTML = appHtml
 }
 

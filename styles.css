@@ -28,7 +28,7 @@ body {
 }
 
 .container {
-  display: flex;
+  display: inline-block;
   justify-content: center;
   width: 480px;
   background-color: #C2F5FF;
@@ -36,12 +36,15 @@ body {
   border-radius: 12px;
 }
 
-.difficult__values-form {
+.difficult__values {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   gap: 26px;
-  padding-bottom: 67px;
+}
+.difficult__btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 56px;
 }
 .difficult__items-block {
   display: flex;
