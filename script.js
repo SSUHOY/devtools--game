@@ -30,8 +30,6 @@ const renderApp = () => {
     appEl.innerHTML = appHtml;
 }
 
-
-
 renderApp();
 
 // Инициализация кнопки старт
@@ -61,6 +59,7 @@ const initBackToBtn = () => {
     backToBtn.addEventListener('click', () => {
         console.log('Чек');
         renderApp();
+        initStartBtn();
     })
 }
 
@@ -73,6 +72,7 @@ const renderGamePage_1 = () => {
     `
     appEl.innerHTML = appHtml
     initBackToBtn();
+   
 }
 
 const renderGamePage_2 = () => {
