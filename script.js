@@ -1,7 +1,5 @@
 let difficult = [{ value: 1 }, { value: 2 }, { value: 3 }]
 
-
-
 // Рендер страницы 
 const renderApp = () => {
 
@@ -51,21 +49,22 @@ const initStartBtn = () => {
     let rd3 = document.getElementById('3');
 
     btn.addEventListener('click', () => {
-        if (rd1.checked === true) {
+        if (rd1.checked == true) {
             const appHtml = `
             <h1 class="dif-header">Первый уровень сложности</h2>
             <button class='back-to-btn'>К выбору сложности</button>
             `
             appEl.innerHTML = appHtml
             initBackToBtn();
-        } else if (rd2.checked === true) {
+        } else if (rd2.checked == true) {
             const appHtml = `
             <h1 class="dif-header">Второй уровень сложности</h2>
             <button class='back-to-btn'>К выбору сложности</button>
             `
             appEl.innerHTML = appHtml
             initBackToBtn();
-        } else if (rd3.checked === true) {
+        } else if (rd3.checked == true) {
+            const appHtml =
             `
     <h1 class="dif-header">Третий уровень сложности</h2>
     <button class='back-to-btn'>К выбору сложности</button>
