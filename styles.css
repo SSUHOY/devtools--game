@@ -63,6 +63,10 @@ body {
   font-size: 48px;
   line-height: 72px;
   color: #0080C1;
+  font-family: "StratosSkyeng";
+}
+.difficult__values-buttons:active {
+  background-color: #004980;
 }
 
 .value {
@@ -111,15 +115,13 @@ body {
   cursor: pointer;
 }
 
-.value_1 {
+.value {
   position: absolute;
   top: 323px;
+  display: none;
+  font-family: "StratosSkyeng";
 }
-.value_2 {
-  position: absolute;
-  top: 323px;
-}
-.value_3 {
-  position: absolute;
-  top: 323px;
+
+.r-group:hover {
+  background: #06467a;
 }/*# sourceMappingURL=styles.css.map */

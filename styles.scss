@@ -71,6 +71,12 @@ body {
         font-size: 48px;
         line-height: 72px;
         color: #0080C1;
+        font-family: 'StratosSkyeng';
+        ;
+
+        &:active {
+            background-color: #004980;
+        }
     }
 }
 
@@ -123,18 +129,12 @@ body {
 }
 
 .value {
-    &_1 {
-        position: absolute;
-        top: 323px;
-    }
+    position: absolute;
+    top: 323px;
+    display: none;
+    font-family: 'StratosSkyeng';
+}
 
-    &_2 {
-        position: absolute;
-        top: 323px;
-    }
-
-    &_3 {
-        position: absolute;
-        top: 323px;
-    }
+.r-group:hover {
+    background: #06467a;
 }
