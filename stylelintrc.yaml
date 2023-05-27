@@ -1,0 +1,5 @@
+extends:
+["stylelint-cofig-standart",
+"stylelint-cofig-prettier",
+"stylelint-prettier/recommended"
+]
