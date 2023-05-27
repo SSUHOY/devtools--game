@@ -12,11 +12,21 @@
     &-form {
         display: flex;
     }
+    font-family: "StratosSkyeng";
+    color: #ffff;
+    margin-left: 40px;
+}
+
+.timer {
+    font-family: "StratosSkyeng";
+    color: #ffff;
+    font-size: 64px;
 }
 
 .details {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 35px;
 }
 
 .cards,
@@ -38,7 +48,6 @@ p {
     perspective: 1000px;
     transform-style: preserve-3d;
 }
-
 
 // Анимация
 // .card.shake {

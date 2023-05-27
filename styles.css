@@ -10,13 +10,25 @@
   cursor: pointer;
 }
 
+.time {
+  font-family: "StratosSkyeng";
+  color: white;
+  margin-left: 40px;
+}
 .time-form {
   display: flex;
+}
+
+.timer {
+  font-family: "StratosSkyeng";
+  color: white;
+  font-size: 64px;
 }
 
 .details {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 35px;
 }
 
 .cards,
@@ -57,6 +69,7 @@ p {
 .center {
   padding-left: calc(50% - 600px);
   padding-right: calc(50% - 600px);
+  padding-top: calc(50% - 600px);
 }
 
 .body-box {
@@ -169,4 +182,10 @@ p {
 
 .r-group:hover {
   background: #06467a;
+}
+
+.wrapper {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(12, 1fr);
 }/*# sourceMappingURL=styles.css.map */

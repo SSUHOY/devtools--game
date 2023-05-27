@@ -23,6 +23,7 @@
 .center {
     padding-left: calc(50% - 600px);
     padding-right: calc(50% - 600px);
+    padding-top: calc(50% - 600px);
 }
 
 .body-box {
@@ -142,3 +143,8 @@
     background: #06467a;
 }
 
+.wrapper {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(12, 1fr);
+}
