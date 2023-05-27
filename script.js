@@ -44,45 +44,32 @@ const initStartBtn = () => {
     let btn = document.querySelector('.start-button')
 
     btn.addEventListener('click', () => {
-        renderGamePage();
+        renderLevel();
     });
 }
 initStartBtn();
 
 
-// Рендер игры
-const renderGamePage = () => {
+const renderLevel = (value) => {
     const appEl = document.getElementById('gameApp')
-
     let rd1 = document.getElementById('1');
     let rd2 = document.getElementById('2');
     let rd3 = document.getElementById('3');
 
     if (rd1.checked == true) {
-        const appHtml = `
-        <h1 class="dif-header">Первый уровень сложности</h2>
-        <button class='back-to-btn'>К выбору сложности</button>
-        `
-        appEl.innerHTML = appHtml
-        initBackToBtn();
+        value = 1;
     } else if (rd2.checked == true) {
-        const appHtml = `
-        <h1 class="dif-header">Второй уровень сложности</h2>
-        <button class='back-to-btn'>К выбору сложности</button>
-        `
-        appEl.innerHTML = appHtml
-        initBackToBtn();
+        value = 2;
     } else if (rd3.checked == true) {
-        const appHtml =
-            `
-        <h1 class="dif-header">Третий уровень сложности</h2>
-        <button class='back-to-btn'>К выбору сложности</button>
-`
-        appEl.innerHTML = appHtml
-        initBackToBtn();
+        value = 3;
     } else {
         alert('Уровень сложности не выбран');
     }
+
+    const appHtml = `<h1 class="dif-header">${value} уровень сложности</h2>
+  <button class='back-to-btn'>К выбору сложности</button>`
+    appEl.innerHTML = appHtml;
+    initBackToBtn();
 }
 
 // Инициализация кнопки "назад к началу"
