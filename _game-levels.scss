@@ -1,0 +1,55 @@
+.restart-button {
+    width: 246px;
+    height: 50px;
+    border-radius: 12px;
+    color: #ffff;
+    font-size: 24px;
+    font-family: "StratosSkyeng";
+    background-color: #7ac100;
+    cursor: pointer;
+}
+.time {
+    &-form {
+        display: flex;
+    }
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cards,
+.card,
+.view,
+.details,
+p {
+    align-items: center;
+}
+
+.cards {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cards .card {
+    cursor: pointer;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+
+// Анимация
+// .card.shake {
+//     animation: shake 0.35s ease-in-out;
+// }
+
+// @keyframes shake{
+//     0%, 100% {
+//         transform: translateX(0);
+//     }
+//     20% {
+//         transform: translateX(-13px);
+//     }
+// }
