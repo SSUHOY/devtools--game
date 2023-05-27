@@ -54,6 +54,7 @@ const renderLevel = (value) => {
         value = 3;
     } else {
         alert('Уровень сложности не выбран');
+        return
     }
 
     const appHtml = `<h1 class="dif-header">${value} уровень сложности</h2>
