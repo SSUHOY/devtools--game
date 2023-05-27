@@ -58,6 +58,11 @@ const renderLevel = (value) => {
     }
 
     const appHtml = `<h1 class="dif-header">${value} уровень сложности</h2>
+
+    
+
+
+
   <button class='back-to-btn'>К выбору сложности</button>`
     appEl.innerHTML = appHtml;
     initBackToBtn();
