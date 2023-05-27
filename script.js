@@ -39,17 +39,7 @@ const renderApp = () => {
 
 renderApp();
 
-// Инициализация кнопки старт
-const initStartBtn = () => {
-    let btn = document.querySelector('.start-button')
-
-    btn.addEventListener('click', () => {
-        renderLevel();
-    });
-}
-initStartBtn();
-
-
+// Рендер уровней
 const renderLevel = (value) => {
     const appEl = document.getElementById('gameApp')
     let rd1 = document.getElementById('1');
@@ -71,6 +61,19 @@ const renderLevel = (value) => {
     appEl.innerHTML = appHtml;
     initBackToBtn();
 }
+
+
+
+
+// Инициализация кнопки старт
+const initStartBtn = () => {
+    let btn = document.querySelector('.start-button')
+
+    btn.addEventListener('click', () => {
+        renderLevel();
+    });
+}
+initStartBtn();
 
 // Инициализация кнопки "назад к началу"
 const initBackToBtn = () => {
