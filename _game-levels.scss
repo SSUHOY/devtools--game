@@ -8,6 +8,11 @@
     background-color: #7ac100;
     cursor: pointer;
 }
+
+ul { 
+    list-style-type: none;
+}
+
 .time {
     &-form {
         display: flex;
@@ -40,6 +45,9 @@ p {
 .cards {
     flex-wrap: wrap;
     justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 15px;
 }
 
 .cards .card {

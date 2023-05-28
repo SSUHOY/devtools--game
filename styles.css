@@ -10,6 +10,10 @@
   cursor: pointer;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .time {
   font-family: "StratosSkyeng";
   color: white;
@@ -42,6 +46,9 @@ p {
 .cards {
   flex-wrap: wrap;
   justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 15px;
 }
 
 .cards .card {
@@ -67,9 +74,10 @@ p {
 }
 
 .center {
-  padding-left: calc(50% - 600px);
-  padding-right: calc(50% - 600px);
-  padding-top: calc(50% - 600px);
+  padding-left: calc(50% - 490px);
+  padding-right: calc(50% - 490px);
+  padding-top: 22px;
+  padding-bottom: 22px;
 }
 
 .body-box {

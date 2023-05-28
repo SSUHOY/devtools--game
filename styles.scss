@@ -21,9 +21,10 @@
 }
 
 .center {
-    padding-left: calc(50% - 600px);
-    padding-right: calc(50% - 600px);
-    padding-top: calc(50% - 600px);
+    padding-left: calc(50% - 490px);
+    padding-right: calc(50% - 490px);
+    padding-top: 22px;
+    padding-bottom: 22px;
 }
 
 .body-box {
@@ -38,6 +39,8 @@
     background-color: hsla(216, 96%, 20%, 0.992);
     height: 100vh;
 }
+
+
 
 .container {
     display: inline-block;
@@ -148,3 +151,4 @@
     gap: 32px;
     grid-template-columns: repeat(12, 1fr);
 }
+

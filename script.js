@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 let difficult = [{ value: 1 }, { value: 2 }, { value: 3 }]
 
 // Рендер страницы
