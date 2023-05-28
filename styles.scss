@@ -5,10 +5,10 @@
     /* поиск шрифта локально */
     src: local("StratosSkyeng"),
         /* загрузка woff2 */
-         url("/fonts/stratosskyengweb-regular.woff2") format("woff2"),
-         /* Если браузер не поддерживает woff2, загрузит woff */
-         url("/fonts/stratosskyengweb-regular.woff") format("woff");
-  }
+        url("/fonts/stratosskyengweb-regular.woff2") format("woff2"),
+        /* Если браузер не поддерживает woff2, загрузит woff */
+        url("/fonts/stratosskyengweb-regular.woff") format("woff");
+}
 
 * {
     margin: 0px;
@@ -32,7 +32,7 @@ body {
 }
 
 .container {
-    display: flex;
+    display: inline-block;
     justify-content: center;
     width: 480px;
     background-color: #C2F5FF;
@@ -41,12 +41,16 @@ body {
 }
 
 .difficult {
-    &__values-form {
+    &__values {
         display: flex;
-        flex-direction: row;
         justify-content: center;
         gap: 26px;
-        padding-bottom: 67px;
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        margin-top: 56px;
     }
 
     &__items-block {
@@ -67,13 +71,19 @@ body {
         font-size: 48px;
         line-height: 72px;
         color: #0080C1;
+        font-family: 'StratosSkyeng';
+        ;
+
+        &:active {
+            background-color: #004980;
+        }
     }
 }
 
 .value {
     font-size: 48px;
     line-height: 72px;
-    color:#0080C1;
+    color: #0080C1;
 }
 
 .dif-header {
@@ -86,12 +96,25 @@ body {
     margin-left: 136px;
     margin-right: 136px;
     font-family: 'StratosSkyeng';
-    
+
 }
 
 .button-container {
     display: flex;
     justify-content: center;
+}
+
+
+.back-to-btn {
+    width: 246px;
+    height: 50px;
+    border-radius: 12px;
+    color: #ffff;
+    font-size: 24px;
+    font-family: 'StratosSkyeng';
+    background-color: #7AC100;
+    cursor: pointer;
+    margin-left: 140px;
 }
 
 .start-button {
@@ -106,17 +129,12 @@ body {
 }
 
 .value {
-    &_1 {
-        position: absolute;
-        top: 323px;
-    }
-    &_2 {
-        position: absolute;
-        top: 323px;
-    }
-    &_3 {
-        position: absolute;
-        top: 323px;
-    }
+    position: absolute;
+    top: 323px;
+    display: none;
+    font-family: 'StratosSkyeng';
 }
 
+.r-group:hover {
+    background: #06467a;
+}
