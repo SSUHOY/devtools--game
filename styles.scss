@@ -1,13 +1,15 @@
+@import 'game-levels';
+
 @font-face {
     font-family: "StratosSkyeng";
     font-style: normal;
     font-weight: 400;
     /* поиск шрифта локально */
     src: local("StratosSkyeng"),
-        /* загрузка woff2 */
-        url("/fonts/stratosskyengweb-regular.woff2") format("woff2"),
+        /* загрузка woff2 */ url("/fonts/stratosskyengweb-regular.woff2")
+            format("woff2"),
         /* Если браузер не поддерживает woff2, загрузит woff */
-        url("/fonts/stratosskyengweb-regular.woff") format("woff");
+            url("/fonts/stratosskyengweb-regular.woff") format("woff");
 }
 
 * {
@@ -19,11 +21,13 @@
 }
 
 .center {
-    padding-left: calc(50% - 600px);
-    padding-right: calc(50% - 600px);
+    padding-left: calc(50% - 490px);
+    padding-right: calc(50% - 490px);
+    padding-top: 22px;
+    padding-bottom: 22px;
 }
 
-body {
+.body-box {
     background-color: hsla(216, 96%, 20%, 0.992);
     height: 100vh;
     display: flex;
@@ -31,11 +35,18 @@ body {
     justify-content: center;
 }
 
+.body_game-box {
+    background-color: hsla(216, 96%, 20%, 0.992);
+    height: 100vh;
+}
+
+
+
 .container {
     display: inline-block;
     justify-content: center;
     width: 480px;
-    background-color: #C2F5FF;
+    background-color: #c2f5ff;
     height: 459px;
     border-radius: 12px;
 }
@@ -59,7 +70,7 @@ body {
     }
 
     &__values-buttons {
-        background-color: #0080C1;
+        background-color: #0080c1;
         height: 96px;
         width: 98px;
         display: flex;
@@ -70,10 +81,8 @@ body {
         cursor: pointer;
         font-size: 48px;
         line-height: 72px;
-        color: #0080C1;
-        font-family: 'StratosSkyeng';
-        ;
-
+        color: #0080c1;
+        font-family: "StratosSkyeng";
         &:active {
             background-color: #004980;
         }
@@ -83,7 +92,7 @@ body {
 .value {
     font-size: 48px;
     line-height: 72px;
-    color: #0080C1;
+    color: #0080c1;
 }
 
 .dif-header {
@@ -95,8 +104,7 @@ body {
     margin-bottom: 48px;
     margin-left: 136px;
     margin-right: 136px;
-    font-family: 'StratosSkyeng';
-
+    font-family: "StratosSkyeng";
 }
 
 .button-container {
@@ -104,15 +112,14 @@ body {
     justify-content: center;
 }
 
-
 .back-to-btn {
     width: 246px;
     height: 50px;
     border-radius: 12px;
     color: #ffff;
     font-size: 24px;
-    font-family: 'StratosSkyeng';
-    background-color: #7AC100;
+    font-family: "StratosSkyeng";
+    background-color: #7ac100;
     cursor: pointer;
     margin-left: 140px;
 }
@@ -123,8 +130,8 @@ body {
     border-radius: 12px;
     color: #ffff;
     font-size: 24px;
-    font-family: 'StratosSkyeng';
-    background-color: #7AC100;
+    font-family: "StratosSkyeng";
+    background-color: #7ac100;
     cursor: pointer;
 }
 
@@ -132,9 +139,16 @@ body {
     position: absolute;
     top: 323px;
     display: none;
-    font-family: 'StratosSkyeng';
+    font-family: "StratosSkyeng";
 }
 
 .r-group:hover {
     background: #06467a;
 }
+
+.wrapper {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(12, 1fr);
+}
+

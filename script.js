@@ -1,12 +1,13 @@
+/* eslint-disable prettier/prettier */
 let difficult = [{ value: 1 }, { value: 2 }, { value: 3 }]
 
-// Рендер страницы 
+// Рендер страницы
 const renderApp = () => {
+    const appEl = document.getElementById("gameApp")
 
-    const appEl = document.getElementById('gameApp')
-
-    const difficultHtml = difficult.map((item) => {
-        return ` 
+    const difficultHtml = difficult
+        .map((item) => {
+            return ` 
         <div class = 'r-all'>
         <span class="r-group">
         <label for="${item.value}" class="difficult__values-buttons">${item.value}
@@ -14,10 +15,9 @@ const renderApp = () => {
         </label>
         </span>
         </div>`
-
-    }).join('')
-    const appHtml =
-        `
+        })
+        .join("")
+    const appHtml = `
     <section class="difficult__items-block center">
     <div class="container">
         <form class="difficult__values-container">
@@ -34,56 +34,56 @@ const renderApp = () => {
     </div>
 </section>
     `
-    appEl.innerHTML = appHtml;
+    appEl.innerHTML = appHtml
 }
 
-renderApp();
+renderApp()
 
 // Рендер уровней
 const renderLevel = (value) => {
-    const appEl = document.getElementById('gameApp')
-    let rd1 = document.getElementById('1');
-    let rd2 = document.getElementById('2');
-    let rd3 = document.getElementById('3');
+    const appEl = document.getElementById("gameApp")
+    let rd1 = document.getElementById("1")
+    let rd2 = document.getElementById("2")
+    let rd3 = document.getElementById("3")
 
-    if (rd1.checked == true) {
-        value = 1;
-    } else if (rd2.checked == true) {
-        value = 2;
-    } else if (rd3.checked == true) {
-        value = 3;
+    if (rd1.checked === true) {
+        value = 1
+    } else if (rd2.checked === true) {
+        value = 2
+    } else if (rd3.checked === true) {
+        value = 3
     } else {
-        alert('Уровень сложности не выбран');
+        alert("Уровень сложности не выбран")
         return
     }
 
     const appHtml = `<h1 class="dif-header">${value} уровень сложности</h2>
+
+    
+
+
+
   <button class='back-to-btn'>К выбору сложности</button>`
-    appEl.innerHTML = appHtml;
-    initBackToBtn();
+    appEl.innerHTML = appHtml
+    initBackToBtn()
 }
-
-
-
 
 // Инициализация кнопки старт
 const initStartBtn = () => {
-    let btn = document.querySelector('.start-button')
+    let btn = document.querySelector(".start-button")
 
-    btn.addEventListener('click', () => {
-        renderLevel();
-    });
+    btn.addEventListener("click", () => {
+        renderLevel()
+    })
 }
-initStartBtn();
+initStartBtn()
 
 // Инициализация кнопки "назад к началу"
 const initBackToBtn = () => {
-    let backToBtn = document.querySelector('.back-to-btn')
-    backToBtn.addEventListener('click', () => {
-        console.log('Чек');
-        renderApp();
-        initStartBtn();
+    let backToBtn = document.querySelector(".back-to-btn")
+    backToBtn.addEventListener("click", () => {
+        console.log("Чек")
+        renderApp()
+        initStartBtn()
     })
 }
-
-

@@ -1,4 +1,63 @@
 @charset "UTF-8";
+.restart-button {
+  width: 246px;
+  height: 50px;
+  border-radius: 12px;
+  color: white;
+  font-size: 24px;
+  font-family: "StratosSkyeng";
+  background-color: #7ac100;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.time {
+  font-family: "StratosSkyeng";
+  color: white;
+  margin-left: 40px;
+}
+.time-form {
+  display: flex;
+}
+
+.timer {
+  font-family: "StratosSkyeng";
+  color: white;
+  font-size: 64px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 35px;
+}
+
+.cards,
+.card,
+.view,
+.details,
+p {
+  align-items: center;
+}
+
+.cards {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 15px;
+}
+
+.cards .card {
+  cursor: pointer;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
 @font-face {
   font-family: "StratosSkyeng";
   font-style: normal;
@@ -15,11 +74,13 @@
 }
 
 .center {
-  padding-left: calc(50% - 600px);
-  padding-right: calc(50% - 600px);
+  padding-left: calc(50% - 490px);
+  padding-right: calc(50% - 490px);
+  padding-top: 22px;
+  padding-bottom: 22px;
 }
 
-body {
+.body-box {
   background-color: hsla(216, 96%, 20%, 0.992);
   height: 100vh;
   display: flex;
@@ -27,11 +88,16 @@ body {
   justify-content: center;
 }
 
+.body_game-box {
+  background-color: hsla(216, 96%, 20%, 0.992);
+  height: 100vh;
+}
+
 .container {
   display: inline-block;
   justify-content: center;
   width: 480px;
-  background-color: #C2F5FF;
+  background-color: #c2f5ff;
   height: 459px;
   border-radius: 12px;
 }
@@ -51,7 +117,7 @@ body {
   justify-content: center;
 }
 .difficult__values-buttons {
-  background-color: #0080C1;
+  background-color: #0080c1;
   height: 96px;
   width: 98px;
   display: flex;
@@ -62,7 +128,7 @@ body {
   cursor: pointer;
   font-size: 48px;
   line-height: 72px;
-  color: #0080C1;
+  color: #0080c1;
   font-family: "StratosSkyeng";
 }
 .difficult__values-buttons:active {
@@ -72,7 +138,7 @@ body {
 .value {
   font-size: 48px;
   line-height: 72px;
-  color: #0080C1;
+  color: #0080c1;
 }
 
 .dif-header {
@@ -99,7 +165,7 @@ body {
   color: white;
   font-size: 24px;
   font-family: "StratosSkyeng";
-  background-color: #7AC100;
+  background-color: #7ac100;
   cursor: pointer;
   margin-left: 140px;
 }
@@ -111,7 +177,7 @@ body {
   color: white;
   font-size: 24px;
   font-family: "StratosSkyeng";
-  background-color: #7AC100;
+  background-color: #7ac100;
   cursor: pointer;
 }
 
@@ -124,4 +190,10 @@ body {
 
 .r-group:hover {
   background: #06467a;
+}
+
+.wrapper {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(12, 1fr);
 }/*# sourceMappingURL=styles.css.map */
