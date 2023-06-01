@@ -1,9 +1,10 @@
-import "./styles.css"
+/* eslint-disable prettier/prettier */
+import './styles.css'
 let difficult = [{ value: 1 }, { value: 2 }, { value: 3 }]
 
 // Рендер страницы запуска игры
 const renderApp = () => {
-    const appEl = document.getElementById("gameApp")
+    const appEl = document.getElementById('gameApp')
 
     const difficultHtml = difficult
         .map((item) => {
@@ -16,7 +17,7 @@ const renderApp = () => {
         </span>
         </div>`
         })
-        .join("")
+        .join('')
     const appHtml = `
     <section class="difficult__items-block center">
     <div class="container">
@@ -41,10 +42,10 @@ renderApp()
 
 // Рендер уровней
 const renderLevel = (value) => {
-    const appEl = document.getElementById("gameApp")
-    let rd1 = document.getElementById("1")
-    let rd2 = document.getElementById("2")
-    let rd3 = document.getElementById("3")
+    const appEl = document.getElementById('gameApp')
+    let rd1 = document.getElementById('1')
+    let rd2 = document.getElementById('2')
+    let rd3 = document.getElementById('3')
 
     if (rd1.checked === true) {
         value = 1
@@ -53,7 +54,7 @@ const renderLevel = (value) => {
     } else if (rd3.checked === true) {
         value = 3
     } else {
-        alert("Уровень сложности не выбран")
+        alert('Уровень сложности не выбран')
         return
     }
 
@@ -65,9 +66,9 @@ const renderLevel = (value) => {
 
 // Инициализация кнопки старт
 const initStartBtn = () => {
-    let btn = document.querySelector(".start-button")
+    let btn = document.querySelector('.start-button')
 
-    btn.addEventListener("click", () => {
+    btn.addEventListener('click', () => {
         renderLevel()
     })
 }
@@ -75,9 +76,9 @@ initStartBtn()
 
 // Инициализация кнопки "назад к началу"
 const initBackToBtn = () => {
-    let backToBtn = document.querySelector(".back-to-btn")
-    backToBtn.addEventListener("click", () => {
-        console.log("Чек")
+    let backToBtn = document.querySelector('.back-to-btn')
+    backToBtn.addEventListener('click', () => {
+        console.log('Чек')
         renderApp()
         initStartBtn()
     })
