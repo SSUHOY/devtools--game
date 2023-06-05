@@ -6,7 +6,7 @@ import {
 import {renderDifficultPageComponent} from './components/difficulty-page-component.js';
 import { renderGamePageComponent } from './components/game-page-component.js';
 
-let page: string | null = null;
+let page = null;
 
 export const game = {
     gameTime: 0,
@@ -17,7 +17,7 @@ export const game = {
 };
 
 
-const goToPage = (newPage:string) => {
+const goToPage = (newPage) => {
     if ([
         DIFFICULTY_PAGE,
         GAME_PAGE,
