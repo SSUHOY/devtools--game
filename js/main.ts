@@ -2,9 +2,12 @@ import '../scss/styles.css'
 import {
     DIFFICULTY_PAGE,
     GAME_PAGE,
-} from './routes.js';
-import {renderDifficultPageComponent} from './components/difficulty-page-component.js';
-import { renderGamePageComponent } from './components/game-page-component.js';
+    // @ts-ignore
+} from './routes.ts';
+// @ts-ignore
+import {renderDifficultPageComponent} from './components/difficulty-page-component.ts';
+// @ts-ignore
+import { renderGamePageComponent } from './components/game-page-component.ts';
 
 let page: string | null = null;
 

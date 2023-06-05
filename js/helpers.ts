@@ -1,4 +1,4 @@
-export function createDeck(difficulty) {
+export function createDeck(difficulty: number) {
     let cardDesk = []
 
     const suits = ['Diamonds', 'Hearts', 'Clubs', 'Spades']
@@ -12,10 +12,12 @@ export function createDeck(difficulty) {
 
     cardDesk = compareRandom(cardDesk)
         .slice(0, difficulty * 3)
+        // @ts-ignore
         .flatMap((card) => [card, { ...card }])
     return compareRandom(cardDesk)
 }
 
+ // @ts-ignore
 function compareRandom(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
