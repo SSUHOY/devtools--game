@@ -1,3 +1,19 @@
+@keyframes zoom-animation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
 .restart-button {
     width: 246px;
     height: 50px;
@@ -53,8 +69,10 @@ p {
 .cards .card {
     cursor: pointer;
     position: relative;
-    perspective: 1000px;
-    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    position: relative;
+    transition: transform 0.5s ease;
+    box-sizing: border-box;
 }
 
 .cards .card .view {
@@ -62,6 +80,15 @@ p {
     pointer-events: none;
 
 }
+
+.card {
+    position: relative;
+    transition: transform 0.5s ease;
+    box-sizing: border-box;
+}
+
+
+
 
 // Анимация
 // .card.shake {
