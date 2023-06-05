@@ -1,4 +1,4 @@
-import { game } from '../main.js'
+import { game } from '../main.ts'
 import { GAME_PAGE } from '../routes.js'
 import { createDeck } from '../helpers.js'
 

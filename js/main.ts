@@ -6,7 +6,7 @@ import {
 import {renderDifficultPageComponent} from './components/difficulty-page-component.js';
 import { renderGamePageComponent } from './components/game-page-component.js';
 
-let page = null;
+let page: string | null = null;
 
 export const game = {
     gameTime: 0,
@@ -16,7 +16,7 @@ export const game = {
     selectedCards: [],
 };
 
-
+// @ts-ignore
 const goToPage = (newPage) => {
     if ([
         DIFFICULTY_PAGE,

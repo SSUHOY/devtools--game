@@ -12,7 +12,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   renderDifficultPageComponent: () => (/* binding */ renderDifficultPageComponent)
 /* harmony export */ });
-/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../main.js */ "./js/main.js");
+/* harmony import */ var _main_ts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../main.ts */ "./js/main.ts");
 /* harmony import */ var _routes_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../routes.js */ "./js/routes.js");
 /* harmony import */ var _helpers_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helpers.js */ "./js/helpers.js");
 
@@ -80,9 +80,9 @@ function renderDifficultPageComponent({ appEl, goToPage }) {
         }
 
         const selectedDifficulty = parseInt(selectedDifficultyBtn.value)
-        _main_js__WEBPACK_IMPORTED_MODULE_0__.game.difficulty = selectedDifficulty
-        _main_js__WEBPACK_IMPORTED_MODULE_0__.game.gameStatus = _routes_js__WEBPACK_IMPORTED_MODULE_1__.GAME_PAGE
-        _main_js__WEBPACK_IMPORTED_MODULE_0__.game.cards = (0,_helpers_js__WEBPACK_IMPORTED_MODULE_2__.createDeck)(selectedDifficulty)
+        _main_ts__WEBPACK_IMPORTED_MODULE_0__.game.difficulty = selectedDifficulty
+        _main_ts__WEBPACK_IMPORTED_MODULE_0__.game.gameStatus = _routes_js__WEBPACK_IMPORTED_MODULE_1__.GAME_PAGE
+        _main_ts__WEBPACK_IMPORTED_MODULE_0__.game.cards = (0,_helpers_js__WEBPACK_IMPORTED_MODULE_2__.createDeck)(selectedDifficulty)
         goToPage(_routes_js__WEBPACK_IMPORTED_MODULE_1__.GAME_PAGE)
     })
 
@@ -271,178 +271,10 @@ function createDeck(difficulty) {
 function compareRandom(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        ;[arr[i], arr[j]] = [arr[j], arr[i]];
+        [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     return arr;
 }
-
-
-/***/ }),
-
-/***/ "./js/main.js":
-/*!********************!*\
-  !*** ./js/main.js ***!
-  \********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   game: () => (/* binding */ game),
-/* harmony export */   renderApp: () => (/* binding */ renderApp)
-/* harmony export */ });
-/* harmony import */ var _scss_styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/styles.css */ "./scss/styles.css");
-/* harmony import */ var _routes_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes.js */ "./js/routes.js");
-/* harmony import */ var _components_difficulty_page_component_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/difficulty-page-component.js */ "./js/components/difficulty-page-component.js");
-/* harmony import */ var _components_game_page_component_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/game-page-component.js */ "./js/components/game-page-component.js");
-
-
-
-
-
-let page = null;
-
-const game = {
-    gameTime: 0,
-    difficulty: null,
-    gameStatus: page,
-    cards: [],
-    selectedCards: [],
-};
-
-
-const goToPage = (newPage) => {
-    if ([
-        _routes_js__WEBPACK_IMPORTED_MODULE_1__.DIFFICULTY_PAGE,
-        _routes_js__WEBPACK_IMPORTED_MODULE_1__.GAME_PAGE,
-    ].includes(newPage)
-    ) {
-        if (newPage === _routes_js__WEBPACK_IMPORTED_MODULE_1__.DIFFICULTY_PAGE) {
-            page = _routes_js__WEBPACK_IMPORTED_MODULE_1__.DIFFICULTY_PAGE;
-            return renderApp()
-        }
-        if (newPage === _routes_js__WEBPACK_IMPORTED_MODULE_1__.GAME_PAGE) {
-            renderApp();
-        }
-
-        page = newPage;
-        renderApp();
-        return;
-    }
-    throw new Error('Страницы не существует');
-}
-
-const renderApp = () => {
-    const appEl = document.getElementById('gameApp');
-    if (page === _routes_js__WEBPACK_IMPORTED_MODULE_1__.DIFFICULTY_PAGE) {
-        return (0,_components_difficulty_page_component_js__WEBPACK_IMPORTED_MODULE_2__.renderDifficultPageComponent)({
-            appEl,
-            goToPage,
-        });
-    }
-
-    if (page === _routes_js__WEBPACK_IMPORTED_MODULE_1__.GAME_PAGE) {
-        const playCards = game.cards;
-        return (0,_components_game_page_component_js__WEBPACK_IMPORTED_MODULE_3__.renderGamePageComponent)({
-            appEl,
-            goToPage,
-            playCards,
-        });
-    }
-
-};
-
-
-goToPage(_routes_js__WEBPACK_IMPORTED_MODULE_1__.DIFFICULTY_PAGE);
-
-
-
-// let difficult = [{ value: 1 }, { value: 2 }, { value: 3 }]
-
-// // Рендер страницы запуска игры
-// const renderApp = () => {
-//     const appEl = document.getElementById('gameApp')
-
-//     const difficultHtml = difficult
-//         .map((item) => {
-//             return ` 
-//         <div class = 'r-all'>
-//         <span class="r-group">
-//         <label for="${item.value}" class="difficult__values-buttons">${item.value}
-//         <input type="radio" id="${item.value}" class="value" name="difficult"/>
-//         </label>
-//         </span>
-//         </div>`
-//         })
-//         .join('')
-//     const appHtml = `
-//     <div class="difficult__items-block center">
-//     <div class="container">
-//         <form class="difficult__values-container">
-//             <legend class="dif-header">Выбери сложность</legend>
-//             <fieldset class="difficult__values-form">  
-//             <div class = 'difficult__values'>
-//                     ${difficultHtml}
-//             </div>
-//                 <div class = 'difficult__btn'>
-//                 <button class="start-button" id ='start'>Старт</button>
-//                 </div>
-//             </fieldset>
-//         </form>
-//     </div>
-// </div>
-//     `
-//     appEl.innerHTML = appHtml
-
-    
-// }
-
-// renderApp()
-
-// Рендер уровней
-// const renderLevel = (value) => {
-//     const appEl = document.getElementById('gameApp')
-//     let rd1 = document.getElementById('1')
-//     let rd2 = document.getElementById('2')
-//     let rd3 = document.getElementById('3')
-
-//     if (rd1.checked === true) {
-//         value = 1
-//     } else if (rd2.checked === true) {
-//         value = 2
-//     } else if (rd3.checked === true) {
-//         value = 3
-//     } else {
-//         alert('Уровень сложности не выбран')
-//         return
-//     }
-
-//     appEl.innerHTML = appHtml
-
-//     initBackToBtn()
-// }
-
-// // Инициализация кнопки старт
-// const initStartBtn = () => {
-//     let btn = document.querySelector('.start-button')
-
-//     btn.addEventListener('click', () => {
-//         renderLevel()
-//     })
-// }
-// // initStartBtn()
-
-// // Инициализация кнопки "назад к началу"
-// const initBackToBtn = () => {
-//     let backToBtn = document.querySelector('.back-to-btn')
-//     backToBtn.addEventListener('click', () => {
-//         console.log('Чек')
-//         renderApp()
-//         initStartBtn()
-//     })
-// }
-
-
-// // Рендер карточек
 
 
 /***/ }),
@@ -474,6 +306,147 @@ const RESULT_PAGE = 'result';
 
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./js/main.ts":
+/*!********************!*\
+  !*** ./js/main.ts ***!
+  \********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   game: () => (/* binding */ game),
+/* harmony export */   renderApp: () => (/* binding */ renderApp)
+/* harmony export */ });
+/* harmony import */ var _scss_styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/styles.css */ "./scss/styles.css");
+/* harmony import */ var _routes_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes.js */ "./js/routes.js");
+/* harmony import */ var _components_difficulty_page_component_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/difficulty-page-component.js */ "./js/components/difficulty-page-component.js");
+/* harmony import */ var _components_game_page_component_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/game-page-component.js */ "./js/components/game-page-component.js");
+
+
+
+
+var page = null;
+var game = {
+    gameTime: 0,
+    difficulty: null,
+    gameStatus: page,
+    cards: [],
+    selectedCards: [],
+};
+// @ts-ignore
+var goToPage = function (newPage) {
+    if ([
+        _routes_js__WEBPACK_IMPORTED_MODULE_1__.DIFFICULTY_PAGE,
+        _routes_js__WEBPACK_IMPORTED_MODULE_1__.GAME_PAGE,
+    ].includes(newPage)) {
+        if (newPage === _routes_js__WEBPACK_IMPORTED_MODULE_1__.DIFFICULTY_PAGE) {
+            page = _routes_js__WEBPACK_IMPORTED_MODULE_1__.DIFFICULTY_PAGE;
+            return renderApp();
+        }
+        if (newPage === _routes_js__WEBPACK_IMPORTED_MODULE_1__.GAME_PAGE) {
+            renderApp();
+        }
+        page = newPage;
+        renderApp();
+        return;
+    }
+    throw new Error('Страницы не существует');
+};
+var renderApp = function () {
+    var appEl = document.getElementById('gameApp');
+    if (page === _routes_js__WEBPACK_IMPORTED_MODULE_1__.DIFFICULTY_PAGE) {
+        return (0,_components_difficulty_page_component_js__WEBPACK_IMPORTED_MODULE_2__.renderDifficultPageComponent)({
+            appEl: appEl,
+            goToPage: goToPage,
+        });
+    }
+    if (page === _routes_js__WEBPACK_IMPORTED_MODULE_1__.GAME_PAGE) {
+        var playCards = game.cards;
+        return (0,_components_game_page_component_js__WEBPACK_IMPORTED_MODULE_3__.renderGamePageComponent)({
+            appEl: appEl,
+            goToPage: goToPage,
+            playCards: playCards,
+        });
+    }
+};
+goToPage(_routes_js__WEBPACK_IMPORTED_MODULE_1__.DIFFICULTY_PAGE);
+// let difficult = [{ value: 1 }, { value: 2 }, { value: 3 }]
+// // Рендер страницы запуска игры
+// const renderApp = () => {
+//     const appEl = document.getElementById('gameApp')
+//     const difficultHtml = difficult
+//         .map((item) => {
+//             return ` 
+//         <div class = 'r-all'>
+//         <span class="r-group">
+//         <label for="${item.value}" class="difficult__values-buttons">${item.value}
+//         <input type="radio" id="${item.value}" class="value" name="difficult"/>
+//         </label>
+//         </span>
+//         </div>`
+//         })
+//         .join('')
+//     const appHtml = `
+//     <div class="difficult__items-block center">
+//     <div class="container">
+//         <form class="difficult__values-container">
+//             <legend class="dif-header">Выбери сложность</legend>
+//             <fieldset class="difficult__values-form">  
+//             <div class = 'difficult__values'>
+//                     ${difficultHtml}
+//             </div>
+//                 <div class = 'difficult__btn'>
+//                 <button class="start-button" id ='start'>Старт</button>
+//                 </div>
+//             </fieldset>
+//         </form>
+//     </div>
+// </div>
+//     `
+//     appEl.innerHTML = appHtml
+// }
+// renderApp()
+// Рендер уровней
+// const renderLevel = (value) => {
+//     const appEl = document.getElementById('gameApp')
+//     let rd1 = document.getElementById('1')
+//     let rd2 = document.getElementById('2')
+//     let rd3 = document.getElementById('3')
+//     if (rd1.checked === true) {
+//         value = 1
+//     } else if (rd2.checked === true) {
+//         value = 2
+//     } else if (rd3.checked === true) {
+//         value = 3
+//     } else {
+//         alert('Уровень сложности не выбран')
+//         return
+//     }
+//     appEl.innerHTML = appHtml
+//     initBackToBtn()
+// }
+// // Инициализация кнопки старт
+// const initStartBtn = () => {
+//     let btn = document.querySelector('.start-button')
+//     btn.addEventListener('click', () => {
+//         renderLevel()
+//     })
+// }
+// // initStartBtn()
+// // Инициализация кнопки "назад к началу"
+// const initBackToBtn = () => {
+//     let backToBtn = document.querySelector('.back-to-btn')
+//     backToBtn.addEventListener('click', () => {
+//         console.log('Чек')
+//         renderApp()
+//         initStartBtn()
+//     })
+// }
+// // Рендер карточек
 
 
 /***/ })
@@ -538,7 +511,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__("./js/main.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./js/main.ts");
 /******/ 	
 /******/ })()
 ;
