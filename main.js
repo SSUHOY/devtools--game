@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import './styles.css'
+// import './styles.css'
 let difficult = [{ value: 1 }, { value: 2 }, { value: 3 }]
 
 // Рендер страницы запуска игры
@@ -19,7 +19,7 @@ const renderApp = () => {
         })
         .join('')
     const appHtml = `
-    <section class="difficult__items-block center">
+    <div class="difficult__items-block center">
     <div class="container">
         <form class="difficult__values-container">
             <legend class="dif-header">Выбери сложность</legend>
@@ -33,9 +33,11 @@ const renderApp = () => {
             </fieldset>
         </form>
     </div>
-</section>
+</div>
     `
     appEl.innerHTML = appHtml
+
+    
 }
 
 renderApp()
@@ -58,9 +60,8 @@ const renderLevel = (value) => {
         return
     }
 
-    const appHtml = `<h1 class="dif-header">${value} уровень сложности</h2>
-  <button class='back-to-btn'>К выбору сложности</button>`
     appEl.innerHTML = appHtml
+
     initBackToBtn()
 }
 
@@ -84,27 +85,5 @@ const initBackToBtn = () => {
     })
 }
 
-// КОД ДЛЯ СТРАНИЦЫ ИГРЫ
-// const cards = document.querySelectorAll(".card")
-// timeTag = document.querySelector(".timer")
-// refreshBtn = document.querySelector(".restart-button")
-// let matchedCards = 0
-// let cardOne, cardTwo, timer
-// isPlaying = false
 
-// function flipCard({ target: clickedCard }) {
-//     if (!isPlaying) {
-//         isPlaying = true
-//         timer = setInterval(initTimer, 1000)
-//     }
-//     if (clickedCard !== cardOne) {
-//         clickedCard.classList.add("flip")
-//     }
-//     if (!cardOne) {
-//         return (cardOne = clickedCard)
-//     }
-//     cardTwo = clickedCard
-//     let cardOneIcon = cardOne.querySelector(".front-view i").classList.value
-//     cardTwoIcon = cardTwo.querySelector(".front-view i").classList.value
-//     matchedCards(cardOneIcon, cardTwoIcon)
-// }
+// Рендер карточек

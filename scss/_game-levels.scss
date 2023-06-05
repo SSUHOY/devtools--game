@@ -57,6 +57,12 @@ p {
     transform-style: preserve-3d;
 }
 
+.cards .card .view {
+    user-select: none;
+    pointer-events: none;
+
+}
+
 // Анимация
 // .card.shake {
 //     animation: shake 0.35s ease-in-out;

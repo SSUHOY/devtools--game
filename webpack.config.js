@@ -32,4 +32,5 @@ module.exports = {
             template: "./index.html",
         }),
     ],
+    devtool: isProduction ? "hidden-source-map": "source-map"
 }
