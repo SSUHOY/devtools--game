@@ -257,6 +257,7 @@ ul {
     margin-bottom: 48px;
     margin-left: 136px;
     margin-right: 136px;
+    /* stylelint-disable-next-line declaration-empty-line-before */
     font-family: StratosSkyeng;
 }
 
@@ -289,7 +290,6 @@ ul {
     cursor: pointer;
 }
 
-/* stylelint-disable-next-line no-duplicate-selectors */
 .value {
     position: absolute;
     top: 323px;
