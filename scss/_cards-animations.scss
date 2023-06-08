@@ -1,0 +1,26 @@
+@keyframes zoom-animation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.card.visible .card__back {
+    transform: rotateY(180deg);
+}
+
+.card.visible .card__front {
+    transform: rotateY(0deg);
+}
+
+.card.matched {
+    animation: zoom-animation 0.3s ease-in-out;
+}

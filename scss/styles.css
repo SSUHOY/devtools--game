@@ -1,0 +1,309 @@
+@charset "UTF-8";
+
+@keyframes zoom-animation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes zoom-animation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.restart-button {
+    width: 246px;
+    height: 50px;
+    border-radius: 12px;
+    color: white;
+    font-size: 24px;
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+    font-family: StratosSkyeng;
+    background-color: #7ac100;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.time {
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+    font-family: StratosSkyeng;
+    color: white;
+    margin-left: 40px;
+}
+
+.time-form {
+    display: flex;
+}
+
+.timer {
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+    font-family: StratosSkyeng;
+    color: white;
+    font-size: 64px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 35px;
+}
+
+.card {
+    position: relative;
+    transition: transform 0.5s ease;
+    box-sizing: border-box;
+}
+
+.card.visible .card__back {
+    transform: rotateY(180deg);
+}
+
+.card.visible .card__front {
+    transform: rotateY(0deg);
+}
+
+.card.matched {
+    animation: zoom-animation 0.3s ease-in-out;
+}
+
+.wrapper {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    perspective: 1000px;
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+.card {
+    position: relative;
+    transition: transform 0.5s ease;
+    box-sizing: border-box;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.card__front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95px;
+    height: 133px;
+    background-color: rgb(255 255 255);
+    color: rgb(0 0 0);
+    font-size: 24px;
+    line-height: 24px;
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: transform 500ms ease-in-out;
+    box-sizing: border-box;
+}
+
+.card__top-left,
+.card__down-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+}
+
+.card__top-left {
+    top: 5px;
+    left: 6px;
+}
+
+.card__down-right {
+    transform: rotate(180deg);
+    align-self: end;
+    bottom: 5px;
+    right: 6px;
+}
+
+.card__center-suit {
+    position: absolute;
+}
+
+.card .small-suit {
+    display: inline-block;
+    display: flex;
+    width: 6px;
+    height: 6px;
+}
+
+@font-face {
+    font-family: StratosSkyeng;
+    font-style: normal;
+    font-weight: 400;
+
+    /* поиск шрифта локально */
+    src: local('StratosSkyeng'),
+        url('/fonts/stratosskyengweb-regular.woff2') format('woff2'),
+        url('/fonts/stratosskyengweb-regular.woff') format('woff');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.center {
+    padding: 22px calc(50% - 490px) 22px calc(50% - 490px);
+}
+
+.body-box {
+    background-color: hsl(216deg 96% 20% / 99.2%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.body_game-box {
+    background-color: hsl(216deg 96% 20% / 99.2%);
+    height: 100vh;
+}
+
+.container {
+    display: inline-block;
+    justify-content: center;
+    width: 480px;
+    background-color: #c2f5ff;
+    height: 459px;
+    border-radius: 12px;
+}
+
+.difficult__values {
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+}
+
+.difficult__btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 56px;
+}
+
+.difficult__items-block {
+    display: flex;
+    justify-content: center;
+}
+
+.difficult__values-buttons {
+    background-color: #0080c1;
+    height: 96px;
+    width: 98px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    /* stylelint-disable-next-line declaration-block-no-shorthand-property-overrides */
+    background: white;
+    cursor: pointer;
+    font-size: 48px;
+    line-height: 72px;
+    color: #0080c1;
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+    font-family: StratosSkyeng;
+}
+
+.difficult__values-buttons:active {
+    background-color: #004980;
+}
+
+.value {
+    font-size: 48px;
+    line-height: 72px;
+    color: #0080c1;
+}
+
+.dif-header {
+    color: #004980;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    padding-top: 52px;
+    margin-bottom: 48px;
+    margin-left: 136px;
+    margin-right: 136px;
+    /* stylelint-disable-next-line declaration-empty-line-before */
+    font-family: StratosSkyeng;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.back-to-btn {
+    width: 246px;
+    height: 50px;
+    border-radius: 12px;
+    color: white;
+    font-size: 24px;
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+    font-family: StratosSkyeng;
+    background-color: #7ac100;
+    cursor: pointer;
+    margin-left: 140px;
+}
+
+.start-button {
+    width: 246px;
+    height: 50px;
+    border-radius: 12px;
+    color: white;
+    font-size: 24px;
+    font-family: StratosSkyeng;
+    background-color: #7ac100;
+    cursor: pointer;
+}
+
+.value {
+    position: absolute;
+    top: 323px;
+    display: none;
+    font-family: StratosSkyeng;
+}
+
+.r-group:hover {
+    background: #06467a;
+}
+
+.form-error {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    font-family: StratosSkyeng;
+}

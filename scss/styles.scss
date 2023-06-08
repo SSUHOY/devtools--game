@@ -1,15 +1,17 @@
 @import 'game-levels';
+@import 'cards-animations';
+@import 'cards';
 
 @font-face {
-    font-family: "StratosSkyeng";
+    font-family: 'StratosSkyeng';
     font-style: normal;
     font-weight: 400;
     /* поиск шрифта локально */
-    src: local("StratosSkyeng"),
-        /* загрузка woff2 */ url("/fonts/stratosskyengweb-regular.woff2")
-            format("woff2"),
+    src: local('StratosSkyeng'),
+        /* загрузка woff2 */ url('/fonts/stratosskyengweb-regular.woff2')
+            format('woff2'),
         /* Если браузер не поддерживает woff2, загрузит woff */
-            url("/fonts/stratosskyengweb-regular.woff") format("woff");
+            url('/fonts/stratosskyengweb-regular.woff') format('woff');
 }
 
 * {
@@ -39,8 +41,6 @@
     background-color: hsla(216, 96%, 20%, 0.992);
     height: 100vh;
 }
-
-
 
 .container {
     display: inline-block;
@@ -82,7 +82,7 @@
         font-size: 48px;
         line-height: 72px;
         color: #0080c1;
-        font-family: "StratosSkyeng";
+        font-family: 'StratosSkyeng';
         &:active {
             background-color: #004980;
         }
@@ -104,7 +104,7 @@
     margin-bottom: 48px;
     margin-left: 136px;
     margin-right: 136px;
-    font-family: "StratosSkyeng";
+    font-family: 'StratosSkyeng';
 }
 
 .button-container {
@@ -118,7 +118,7 @@
     border-radius: 12px;
     color: #ffff;
     font-size: 24px;
-    font-family: "StratosSkyeng";
+    font-family: 'StratosSkyeng';
     background-color: #7ac100;
     cursor: pointer;
     margin-left: 140px;
@@ -130,7 +130,7 @@
     border-radius: 12px;
     color: #ffff;
     font-size: 24px;
-    font-family: "StratosSkyeng";
+    font-family: 'StratosSkyeng';
     background-color: #7ac100;
     cursor: pointer;
 }
@@ -139,16 +139,16 @@
     position: absolute;
     top: 323px;
     display: none;
-    font-family: "StratosSkyeng";
+    font-family: 'StratosSkyeng';
 }
 
 .r-group:hover {
     background: #06467a;
 }
 
-.wrapper {
-    display: grid;
-    gap: 32px;
-    grid-template-columns: repeat(12, 1fr);
+.form-error {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    font-family: 'StratosSkyeng';
 }
-
