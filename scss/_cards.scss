@@ -4,13 +4,6 @@
     grid-template-columns: repeat(12, 1fr);
 }
 
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    perspective: 1000px;
-}
-
 .card {
     position: relative;
     transition: transform 0.5s ease;
