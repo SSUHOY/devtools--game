@@ -2,12 +2,15 @@ import '../scss/styles.css'
 import {
     DIFFICULTY_PAGE,
     GAME_PAGE,
+    RESULT_PAGE,
     // @ts-ignore
 } from './routes.ts';
 // @ts-ignore
 import {renderDifficultPageComponent} from './components/difficulty-page-component.ts';
 // @ts-ignore
 import { renderGamePageComponent } from './components/game-page-component.ts';
+// @ts-ignore
+import { renderResultMessagePageComp } from './components/game-result-component.ts';
 
 let page: string | null = null;
 
@@ -17,6 +20,7 @@ export const game = {
     gameStatus: page,
     cards: [],
     selectedCards: [],
+    isWin: null,
 };
 
 // @ts-ignore
@@ -24,6 +28,7 @@ const goToPage = (newPage) => {
     if ([
         DIFFICULTY_PAGE,
         GAME_PAGE,
+        RESULT_PAGE
     ].includes(newPage)
     ) {
         if (newPage === DIFFICULTY_PAGE) {
@@ -31,6 +36,10 @@ const goToPage = (newPage) => {
             return renderApp()
         }
         if (newPage === GAME_PAGE) {
+            renderApp();
+        }
+
+        if (newPage === RESULT_PAGE) {
             renderApp();
         }
 

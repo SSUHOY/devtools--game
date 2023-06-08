@@ -9,11 +9,11 @@
         "lint:js": "eslint \"./**/*.js\" --ignore-pattern \"node_modules/\"",
         "lint:scss": "stylelint './**/*.scss' ",
         "lint:css": "stylelint \"./**/*.css\" ",
-        "lint": "npm run lint:js && npm run lint:css",
+        "lint": "npm run lint:js && npm run lint:css && npm run lint:tsType",
         "prepare": "husky install",
         "build": "set NODE_ENV=production && webpack",
         "start": "webpack-dev-server --open",
-        "lint:ts": "tsc ––noEmit"
+        "lint:tsType": "tsc ––noEmit"
     },
     "keywords": [],
     "author": "",

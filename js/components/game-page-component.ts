@@ -1,6 +1,6 @@
 // @ts-ignore
-import { DIFFICULTY_PAGE } from "../routes.ts";
-
+import { game } from "../main.ts";// @ts-ignore
+import { DIFFICULTY_PAGE, RESULT_PAGE } from "../routes.ts";
 // @ts-ignore
 export function renderGamePageComponent({ appEl, goToPage, playCards }) {
     const cardsHTML = playCards
@@ -105,14 +105,18 @@ export function renderGamePageComponent({ appEl, goToPage, playCards }) {
     
                             if (matchedPairs === playCards.length / 2) {
                                 setTimeout(() => {
-                                    alert('Вы победили!');
+                                    // alert('Вы победили!');
                                     goToPage(DIFFICULTY_PAGE);
+                                    game.gameStatus = RESULT_PAGE;
+                                    game.isWin = true;
                                 }, 800);
                             }
                         } else {
                             setTimeout(() => {
                                 alert('Вы проиграли!');
-                                goToPage(DIFFICULTY_PAGE);
+                                game.gameStatus = RESULT_PAGE;
+                                game.isWin = false;
+                                goToPage(RESULT_PAGE);
                             }, 800);
                         }
     
