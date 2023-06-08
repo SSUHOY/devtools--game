@@ -19,6 +19,6 @@
     "rules": {
         "camelcase": ["error"],
         "eqeqeq": ["error", "always"],
-        "@typescript-eslint/ban-ts-comment": "off"
+        '@typescript-eslint/no-var-requires': 0,
     }
 }

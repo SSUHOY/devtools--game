@@ -36,7 +36,7 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: [".ts", ".js", ".tsx"],
+        extensions: [".ts", ".js"],
       },
     devtool:
         process.env.NODE_ENV === 'production'
