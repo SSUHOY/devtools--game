@@ -1,49 +1,56 @@
+/* stylelint-disable at-rule-empty-line-before */
+/* stylelint-disable no-descending-specificity */
 @charset "UTF-8";
+
 @keyframes zoom-animation {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
+
 .restart-button {
-  width: 246px;
-  height: 50px;
-  border-radius: 12px;
-  color: white;
-  font-size: 24px;
-  font-family: "StratosSkyeng";
-  background-color: #7ac100;
-  cursor: pointer;
+    width: 246px;
+    height: 50px;
+    border-radius: 12px;
+    color: white;
+    font-size: 24px;
+    font-family: StratosSkyeng;
+    background-color: #7ac100;
+    cursor: pointer;
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 .time {
-  font-family: "StratosSkyeng";
-  color: white;
-  margin-left: 40px;
+    font-family: StratosSkyeng;
+    color: white;
+    margin-left: 40px;
 }
+
 .time-form {
-  display: flex;
+    display: flex;
 }
 
 .timer {
-  font-family: "StratosSkyeng";
-  color: white;
-  font-size: 64px;
+    font-family: StratosSkyeng;
+    color: white;
+    font-size: 64px;
 }
 
 .details {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 35px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 35px;
 }
 
 .cards,
@@ -51,278 +58,284 @@ ul {
 .view,
 .details,
 p {
-  align-items: center;
+    align-items: center;
 }
 
 .cards {
-  flex-wrap: wrap;
-  justify-content: space-between;
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  gap: 15px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 15px;
 }
 
 .cards .card {
-  cursor: pointer;
-  position: relative;
-  transform: rotateY(180deg);
-  position: relative;
-  transition: transform 0.5s ease;
-  box-sizing: border-box;
+    cursor: pointer;
+    transform: rotateY(180deg);
+    position: relative;
+    transition: transform 0.5s ease;
+    box-sizing: border-box;
 }
 
 .cards .card .view {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  pointer-events: none;
+    user-select: none;
+    pointer-events: none;
 }
 
 .card {
-  position: relative;
-  transition: transform 0.5s ease;
-  box-sizing: border-box;
+    position: relative;
+    transition: transform 0.5s ease;
+    box-sizing: border-box;
 }
 
 @keyframes zoom-animation {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
+
 .card.visible .card__back {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
 .card.visible .card__front {
-  transform: rotateY(0deg);
+    transform: rotateY(0deg);
 }
 
 .card.matched {
-  animation: zoom-animation 0.3s ease-in-out;
+    animation: zoom-animation 0.3s ease-in-out;
 }
 
 .wrapper {
-  display: grid;
-  gap: 32px;
-  grid-template-columns: repeat(12, 1fr);
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(12, 1fr);
 }
 
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  perspective: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    perspective: 1000px;
 }
 
 .card {
-  position: relative;
-  transition: transform 0.5s ease;
-  box-sizing: border-box;
+    position: relative;
+    transition: transform 0.5s ease;
+    box-sizing: border-box;
 }
 
 .card__back {
-  height: 133px;
-  border-radius: 4px;
-  width: 95px;
-  backface-visibility: hidden;
-  transform: rotateY(0);
-  transition: transform 500ms ease-in-out;
+    height: 133px;
+    border-radius: 4px;
+    width: 95px;
+    backface-visibility: hidden;
+    transform: rotateY(0);
+    transition: transform 500ms ease-in-out;
 }
 
 .card__front {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 95px;
-  height: 133px;
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  font-size: 24px;
-  line-height: 24px;
-  border-radius: 4px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: rotateY(180deg);
-  backface-visibility: hidden;
-  transition: transform 500ms ease-in-out;
-  box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95px;
+    height: 133px;
+    background-color: rgb(255 255 255);
+    color: rgb(0 0 0);
+    font-size: 24px;
+    line-height: 24px;
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: transform 500ms ease-in-out;
+    box-sizing: border-box;
 }
 
 .card__top-left,
 .card__down-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
 }
 
 .card__top-left {
-  top: 5px;
-  left: 6px;
+    top: 5px;
+    left: 6px;
 }
 
 .card__down-right {
-  transform: rotate(180deg);
-  align-self: end;
-  bottom: 5px;
-  right: 6px;
+    transform: rotate(180deg);
+    align-self: end;
+    bottom: 5px;
+    right: 6px;
 }
 
 .card__center-suit {
-  position: absolute;
+    position: absolute;
 }
 
 .card .small-suit {
-  display: inline-block;
-  display: flex;
-  width: 6px;
-  height: 6px;
+    display: inline-block;
+    display: flex;
+    width: 6px;
+    height: 6px;
 }
 
 @font-face {
-  font-family: "StratosSkyeng";
-  font-style: normal;
-  font-weight: 400;
-  /* поиск шрифта локально */
-  src: local("StratosSkyeng"), url("/fonts/stratosskyengweb-regular.woff2") format("woff2"), url("/fonts/stratosskyengweb-regular.woff") format("woff");
+    font-family: StratosSkyeng;
+    font-style: normal;
+    font-weight: 400;
+
+    /* поиск шрифта локально */
+    src: local('StratosSkyeng'),
+        url('/fonts/stratosskyengweb-regular.woff2') format('woff2'),
+        url('/fonts/stratosskyengweb-regular.woff') format('woff');
 }
+
 * {
-  margin: 0px;
-  padding: 0px;
-  border: 0;
-  outline: none;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
 }
 
 .center {
-  padding-left: calc(50% - 490px);
-  padding-right: calc(50% - 490px);
-  padding-top: 22px;
-  padding-bottom: 22px;
+    padding: 22px calc(50% - 490px) 22px calc(50% - 490px);
 }
 
 .body-box {
-  background-color: hsla(216, 96%, 20%, 0.992);
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    background-color: hsl(216deg 96% 20% / 99.2%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .body_game-box {
-  background-color: hsla(216, 96%, 20%, 0.992);
-  height: 100vh;
+    background-color: hsl(216deg 96% 20% / 99.2%);
+    height: 100vh;
 }
 
 .container {
-  display: inline-block;
-  justify-content: center;
-  width: 480px;
-  background-color: #c2f5ff;
-  height: 459px;
-  border-radius: 12px;
+    display: inline-block;
+    justify-content: center;
+    width: 480px;
+    background-color: #c2f5ff;
+    height: 459px;
+    border-radius: 12px;
 }
 
 .difficult__values {
-  display: flex;
-  justify-content: center;
-  gap: 26px;
+    display: flex;
+    justify-content: center;
+    gap: 26px;
 }
+
 .difficult__btn {
-  display: flex;
-  justify-content: center;
-  margin-top: 56px;
+    display: flex;
+    justify-content: center;
+    margin-top: 56px;
 }
+
 .difficult__items-block {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
+
 .difficult__values-buttons {
-  background-color: #0080c1;
-  height: 96px;
-  width: 98px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 12px;
-  background: white;
-  cursor: pointer;
-  font-size: 48px;
-  line-height: 72px;
-  color: #0080c1;
-  font-family: "StratosSkyeng";
+    background-color: #0080c1;
+    height: 96px;
+    width: 98px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    /* stylelint-disable-next-line declaration-block-no-shorthand-property-overrides */
+    background: white;
+    cursor: pointer;
+    font-size: 48px;
+    line-height: 72px;
+    color: #0080c1;
+    font-family: StratosSkyeng;
 }
+
 .difficult__values-buttons:active {
-  background-color: #004980;
+    background-color: #004980;
 }
 
 .value {
-  font-size: 48px;
-  line-height: 72px;
-  color: #0080c1;
+    font-size: 48px;
+    line-height: 72px;
+    color: #0080c1;
 }
 
 .dif-header {
-  color: #004980;
-  font-size: 40px;
-  line-height: 48px;
-  text-align: center;
-  padding-top: 52px;
-  margin-bottom: 48px;
-  margin-left: 136px;
-  margin-right: 136px;
-  font-family: "StratosSkyeng";
+    color: #004980;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    padding-top: 52px;
+    margin-bottom: 48px;
+    margin-left: 136px;
+    margin-right: 136px;
+    font-family: StratosSkyeng;
 }
 
 .button-container {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .back-to-btn {
-  width: 246px;
-  height: 50px;
-  border-radius: 12px;
-  color: white;
-  font-size: 24px;
-  font-family: "StratosSkyeng";
-  background-color: #7ac100;
-  cursor: pointer;
-  margin-left: 140px;
+    width: 246px;
+    height: 50px;
+    border-radius: 12px;
+    color: white;
+    font-size: 24px;
+    font-family: StratosSkyeng;
+    background-color: #7ac100;
+    cursor: pointer;
+    margin-left: 140px;
 }
 
 .start-button {
-  width: 246px;
-  height: 50px;
-  border-radius: 12px;
-  color: white;
-  font-size: 24px;
-  font-family: "StratosSkyeng";
-  background-color: #7ac100;
-  cursor: pointer;
+    width: 246px;
+    height: 50px;
+    border-radius: 12px;
+    color: white;
+    font-size: 24px;
+    font-family: StratosSkyeng;
+    background-color: #7ac100;
+    cursor: pointer;
 }
 
 .value {
-  position: absolute;
-  top: 323px;
-  display: none;
-  font-family: "StratosSkyeng";
+    position: absolute;
+    top: 323px;
+    display: none;
+    font-family: StratosSkyeng;
 }
 
 .r-group:hover {
-  background: #06467a;
+    background: #06467a;
 }
 
 .form-error {
-  display: flex;
-  justify-content: center;
-  font-size: 24px;
-  font-family: "StratosSkyeng";
-}/*# sourceMappingURL=styles.css.map */
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    font-family: StratosSkyeng;
+} /*# sourceMappingURL=styles.css.map */
