@@ -49,7 +49,7 @@ export const renderApp = () => {
     const appEl = document.getElementById('gameApp');
     if (page === DIFFICULTY_PAGE) {
         return renderDifficultPageComponent({
-            appEl,
+            appEl: appEl ? appEl : document.createElement('div'),
             goToPage,
         });
     }
@@ -57,7 +57,7 @@ export const renderApp = () => {
     if (page === GAME_PAGE) {
         const playCards = game.cards;
         return renderGamePageComponent({
-            appEl,
+            appEl: appEl ? appEl : document.createElement('div'),
             goToPage,
             playCards,
         });
@@ -65,7 +65,7 @@ export const renderApp = () => {
 
     if (page === RESULT_PAGE) {
         return renderResultMessagePageComp({
-            appEl,
+            appEl: appEl ? appEl : document.createElement('div'),
             goToPage,
         })
     }

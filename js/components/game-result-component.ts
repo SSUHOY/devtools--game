@@ -1,15 +1,14 @@
 import { DIFFICULTY_PAGE } from '../routes'
 import { game } from '../main'
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 export function renderResultMessagePageComp({ appEl, goToPage }) {
     const minutes = Math.floor(game.gameTime / 60);
     const seconds = game.gameTime % 60;
+    
         const appHtml = ` <div class = "body-box center">
     <div class = 'main box'>
         <div class="img-block">
-            <img src="dist/static/img/${game.isWin ? 'win-img.png' : 'loose-img.png'} alt="win-img" class="winimg">
+  <img src="./static/img/${game.isWin ? 'win-img.svg' : 'loose-img.svg'}" class='winimg'/>
         </div>
         <p class="box__title result-box__title">
        ${game.isWin ? 'Вы выиграли!' : 'Вы проиграли!'}

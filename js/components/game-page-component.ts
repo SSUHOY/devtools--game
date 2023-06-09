@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { game } from '../main'
 import { DIFFICULTY_PAGE, RESULT_PAGE } from '../routes'
 export function renderGamePageComponent({ appEl, goToPage, playCards }) {
@@ -35,9 +36,8 @@ export function renderGamePageComponent({ appEl, goToPage, playCards }) {
         <div class="time-form">
             <div>
                 <p class="time">min</p>
-                <p class="timer" id='minutes'>00</p>
+                <p class="timer" id='minutes'>00.</p>  
             </div>
-            <span class="timer__dot">.</span>
            <div>
             <p class="time">sec</p>
             <p class="timer" id='seconds'>00</p>
@@ -155,7 +155,9 @@ export function startTimer() {
             minutes++
         }
         gameTime = minutes * 60 + seconds
-        minutesElement.textContent = minutes < 10 ? `0${minutes}` : minutes
+        // @ts-ignore
+        minutesElement.textContent = minutes < 10 ? `0${minutes}.` : minutes
+         // @ts-ignore
         secondsElement.textContent = seconds < 10 ? `0${seconds}` : seconds
     }, 1000)
     return gameTime
