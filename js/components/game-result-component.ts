@@ -1,14 +1,15 @@
-// @ts-ignore
-import { DIFFICULTY_PAGE } from '../routes.ts'
-// @ts-ignore
-import { game } from '../main.ts'
+import { DIFFICULTY_PAGE } from '../routes'
+import { game } from '../main'
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 export function renderResultMessagePageComp({ appEl, goToPage }) {
-    const appHtml = ` <div class = "body-box center">
+    const minutes = Math.floor(game.gameTime / 60);
+    const seconds = game.gameTime % 60;
+        const appHtml = ` <div class = "body-box center">
     <div class = 'main box'>
         <div class="img-block">
-            <img src="dist/static/img/win-img.svg" alt="win-img" class="winimg">
+            <img src="dist/static/img/${game.isWin ? 'win-img.png' : 'loose-img.png'} alt="win-img" class="winimg">
         </div>
         <p class="box__title result-box__title">
        ${game.isWin ? 'Вы выиграли!' : 'Вы проиграли!'}
@@ -16,11 +17,11 @@ export function renderResultMessagePageComp({ appEl, goToPage }) {
         <p class="timer_title">Затраченное время:</p>
             <div class="timer time-result">
                 <div class="timer__block">
-                    <span id="minutes">00</span>
+                    <span id="minutes">${minutes < 10 ? "0" + minutes : minutes}</span>
                   </div>
                   <span class="timer__dot">.</span>
                   <div class="timer__block">
-                    <span id="seconds">00</span>
+                    <span id="seconds">${seconds < 10 ? "0" + seconds : seconds}</span>
                   </div> 
             </div>
             <form class="btn-container">

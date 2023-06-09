@@ -3,16 +3,12 @@ import {
     DIFFICULTY_PAGE,
     GAME_PAGE,
     RESULT_PAGE,
-    // @ts-ignore
-} from './routes.ts';
-// @ts-ignore
-import {renderDifficultPageComponent} from './components/difficulty-page-component.ts';
-// @ts-ignore
-import { renderGamePageComponent } from './components/game-page-component.ts';
-// @ts-ignore
-import { renderResultMessagePageComp } from './components/game-result-component.ts';
+} from './routes';
+import {renderDifficultPageComponent} from './components/difficulty-page-component';
+import { renderGamePageComponent } from './components/game-page-component';
+import { renderResultMessagePageComp } from './components/game-result-component';
 
-let page: string | null = null;
+let page = null;
 
 export const game = {
     gameTime: 0,
@@ -23,7 +19,6 @@ export const game = {
     isWin: null,
 };
 
-// @ts-ignore
 const goToPage = (newPage) => {
     if ([
         DIFFICULTY_PAGE,
@@ -66,6 +61,13 @@ export const renderApp = () => {
             goToPage,
             playCards,
         });
+    }
+
+    if (page === RESULT_PAGE) {
+        return renderResultMessagePageComp({
+            appEl,
+            goToPage,
+        })
     }
 
 };

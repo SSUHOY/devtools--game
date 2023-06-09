@@ -6,14 +6,15 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "format": "prettier --write ./",
-        "lint:js": "eslint \"./**/*.js\" --ignore-pattern \"node_modules/\"",
+        "lint:ts": "eslint \"./**/*.ts\" --ignore-pattern \"node_modules/\"",
         "lint:scss": "stylelint './**/*.scss' ",
         "lint:css": "stylelint \"./**/*.css\" ",
-        "lint": "npm run lint:js && npm run lint:css",
+        "lint:fix": "npx stylelint --fix ./scss/**/*.css && npx stylelint --fix ./scss/**/*.scss",
+        "lint": "npm run lint:js && npm run lint:css && npm run lint:tsType",
         "prepare": "husky install",
         "build": "set NODE_ENV=production && webpack",
         "start": "webpack-dev-server --open",
-        "lint:ts": "tsc ––noEmit"
+        "lint:isType": "tsc ––noEmit"
     },
     "keywords": [],
     "author": "",

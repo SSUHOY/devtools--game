@@ -1,10 +1,7 @@
-// @ts-ignore
-import { game } from '../main.ts'
-// @ts-ignore
-import { GAME_PAGE } from '../routes.ts'
-// @ts-ignore
-import { createDeck } from '../helpers.ts'
-// @ts-ignore
+
+import { game } from '../main'
+import { GAME_PAGE } from '../routes'
+import { createDeck } from '../helpers'
 export function renderDifficultPageComponent({ appEl, goToPage }) {
     const appHtml = `<div class="difficult__items-block center">
     <form class="container">
@@ -40,22 +37,18 @@ export function renderDifficultPageComponent({ appEl, goToPage }) {
     const difficultyBtnElements = document.querySelectorAll(
         '.difficult__values-buttons'
     )
-// @ts-ignore
     let prevSelectedBtn = null
 
     difficultyBtnElements.forEach((difficultyBtnEl) => {
         difficultyBtnEl.addEventListener('click', () => {
             setError('')
-            // @ts-ignore
             if (prevSelectedBtn !== null) {
-                // @ts-ignore
                 prevSelectedBtn.classList.remove('selected')
             }
             difficultyBtnEl.classList.add('selected')
             prevSelectedBtn = difficultyBtnEl
         })
     })
-// @ts-ignore
     difficultyFormEl.addEventListener('submit', (e) => {
         e.preventDefault()
         const selectedDifficultyBtn = difficultyFormEl.querySelector(
@@ -68,14 +61,12 @@ export function renderDifficultPageComponent({ appEl, goToPage }) {
         }
 
         const selectedDifficulty = parseInt(selectedDifficultyBtn.value)
-        // @ts-ignore
         game.difficulty = selectedDifficulty
-        // @ts-ignore
         game.gameStatus = GAME_PAGE
         game.cards = createDeck(selectedDifficulty)
         goToPage(GAME_PAGE)
     })
-// @ts-ignore
+
     function setError(message) {
         formErrorEl.textContent = message
     }
