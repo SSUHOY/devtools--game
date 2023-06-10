@@ -48,7 +48,7 @@ export function renderResultMessagePageComp({
 
     appEl.innerHTML = appHtml
 
-    const startBtn = appEl.querySelector('#start-btn')
+    const startBtn = appEl.querySelector('.restart-button')
     if (startBtn) {
         startBtn.addEventListener('click', () => {
             goToPage(DIFFICULTY_PAGE)

@@ -3,6 +3,11 @@ import { game } from '../main'
 import { DIFFICULTY_PAGE, RESULT_PAGE } from '../routes'
 import { startTimer, stopTimer, gameTime } from '../helpers'
 
+interface SelectedCard {
+    element: Element;
+    index: number;
+}
+
 
 export function renderGamePageComponent({ appEl, goToPage, playCards }) {
     const cardsHTML = playCards
@@ -56,7 +61,7 @@ export function renderGamePageComponent({ appEl, goToPage, playCards }) {
     appEl.innerHTML = appHtml
 
     const cardElements = appEl.querySelectorAll('.card')
-    let selectedCards = []
+    let selectedCards: SelectedCard[] = []
     let matchedPairs = 0
     cardElements.forEach((cardEl) => {
         cardEl.classList.remove('visible')
