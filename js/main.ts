@@ -1,66 +1,67 @@
 import '../scss/styles.css'
-import {
-    DIFFICULTY_PAGE,
-    GAME_PAGE,
-    RESULT_PAGE,
-} from './routes';
-import {renderDifficultPageComponent} from './components/difficulty-page-component';
-import { renderGamePageComponent } from './components/game-page-component';
-import { renderResultMessagePageComp } from './components/game-result-component';
+import { DIFFICULTY_PAGE, GAME_PAGE, RESULT_PAGE } from './routes'
+import { renderDifficultPageComponent } from './components/difficulty-page-component'
+import { renderGamePageComponent } from './components/game-page-component'
+import { renderResultMessagePageComp } from './components/game-result-component'
+import { Card } from './helpers'
 
-let page = null;
+let page = ''
 
-export const game = {
+interface Game {
+    gameTime: number
+    difficulty: number | null
+    gameStatus: string
+    cards: Card[]
+    selectedCards: { element: HTMLElement; index: number }[]
+    isWin: boolean | null
+}
+
+export const game: Game = {
     gameTime: 0,
     difficulty: null,
     gameStatus: page,
     cards: [],
     selectedCards: [],
     isWin: null,
-};
+}
 
-const goToPage = (newPage) => {
-    if ([
-        DIFFICULTY_PAGE,
-        GAME_PAGE,
-        RESULT_PAGE
-    ].includes(newPage)
-    ) {
+const goToPage = (newPage: string) => {
+    if ([DIFFICULTY_PAGE, GAME_PAGE, RESULT_PAGE].includes(newPage)) {
         if (newPage === DIFFICULTY_PAGE) {
-            page = DIFFICULTY_PAGE;
+            page = DIFFICULTY_PAGE
             return renderApp()
         }
         if (newPage === GAME_PAGE) {
-            renderApp();
+            renderApp()
         }
 
         if (newPage === RESULT_PAGE) {
-            renderApp();
+            renderApp()
         }
 
-        page = newPage;
-        renderApp();
-        return;
+        page = newPage
+        renderApp()
+        return
     }
-    throw new Error('Страницы не существует');
+    throw new Error('Страницы не существует')
 }
 
 export const renderApp = () => {
-    const appEl = document.getElementById('gameApp');
+    const appEl = document.getElementById('gameApp')
     if (page === DIFFICULTY_PAGE) {
         return renderDifficultPageComponent({
             appEl: appEl ? appEl : document.createElement('div'),
             goToPage,
-        });
+        })
     }
 
     if (page === GAME_PAGE) {
-        const playCards = game.cards;
+        const playCards = game.cards
         return renderGamePageComponent({
             appEl: appEl ? appEl : document.createElement('div'),
             goToPage,
             playCards,
-        });
+        })
     }
 
     if (page === RESULT_PAGE) {
@@ -69,13 +70,9 @@ export const renderApp = () => {
             goToPage,
         })
     }
+}
 
-};
-
-
-goToPage(DIFFICULTY_PAGE);
-
-
+goToPage(DIFFICULTY_PAGE)
 
 // let difficult = [{ value: 1 }, { value: 2 }, { value: 3 }]
 
@@ -85,7 +82,7 @@ goToPage(DIFFICULTY_PAGE);
 
 //     const difficultHtml = difficult
 //         .map((item) => {
-//             return ` 
+//             return `
 //         <div class = 'r-all'>
 //         <span class="r-group">
 //         <label for="${item.value}" class="difficult__values-buttons">${item.value}
@@ -100,7 +97,7 @@ goToPage(DIFFICULTY_PAGE);
 //     <div class="container">
 //         <form class="difficult__values-container">
 //             <legend class="dif-header">Выбери сложность</legend>
-//             <fieldset class="difficult__values-form">  
+//             <fieldset class="difficult__values-form">
 //             <div class = 'difficult__values'>
 //                     ${difficultHtml}
 //             </div>
@@ -114,7 +111,6 @@ goToPage(DIFFICULTY_PAGE);
 //     `
 //     appEl.innerHTML = appHtml
 
-    
 // }
 
 // renderApp()
@@ -161,6 +157,5 @@ goToPage(DIFFICULTY_PAGE);
 //         initStartBtn()
 //     })
 // }
-
 
 // // Рендер карточек

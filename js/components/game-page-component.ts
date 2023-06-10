@@ -1,6 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { game } from '../main'
 import { DIFFICULTY_PAGE, RESULT_PAGE } from '../routes'
+import { startTimer, stopTimer, gameTime } from '../helpers'
+
+
 export function renderGamePageComponent({ appEl, goToPage, playCards }) {
     const cardsHTML = playCards
         .map((card, index) => {
@@ -69,6 +72,7 @@ export function renderGamePageComponent({ appEl, goToPage, playCards }) {
             cardEl.classList.remove('visible')
         })
         completedTimeout = true
+        console.log('start');
         startTimer()
     }, 5000)
     cardElements.forEach((cardEl, index) => {
@@ -108,6 +112,8 @@ export function renderGamePageComponent({ appEl, goToPage, playCards }) {
                         }
                     } else {
                         setTimeout(() => {
+                            stopTimer()
+                            game.gameTime = gameTime
                             game.gameStatus = RESULT_PAGE
                             game.isWin = false
                             goToPage(RESULT_PAGE)
@@ -122,47 +128,23 @@ export function renderGamePageComponent({ appEl, goToPage, playCards }) {
     document.querySelector('.restart-button').addEventListener('click', () => {
         console.log('start')
         if (!completedTimeout) {
-            clearTimeout(showCardTime);
+            clearTimeout(showCardTime)
         }
-        stopTimer();
+        stopTimer()
         goToPage(DIFFICULTY_PAGE)
     })
 }
 
-function getSuitSymbol(suit) {
-    const suitSymbols = {
-        Hearts: '<img src="./static/img/hearts.svg" alt="hearts">',
-        Diamonds: '<img src="./static/img/diamonds.svg" alt="diamonds">',
-        Clubs: '<img src="./static/img/clubs.svg" alt="clubs">',
-        Spades: '<img src="./static/img/spades.svg" alt="spades">',
-    }
-    return suitSymbols[suit]
+const suitSymbols: {
+    [key: string]: string;
+} = {
+    Hearts: '<img src="./static/img/hearts.svg" alt="hearts">',
+    Diamonds: '<img src="./static/img/diamonds.svg" alt="diamonds">',
+    Clubs: '<img src="./static/img/clubs.svg" alt="clubs">',
+    Spades: '<img src="./static/img/spades.svg" alt="spades">',
+};
+
+function getSuitSymbol(suit: string) {
+    return suitSymbols[suit];
 }
 
-let timerInterval = null
-export let gameTime = 0
-
-export function startTimer() {
-    let minutes = 0
-    let seconds = 0
-    const minutesElement = document.getElementById('minutes')
-    const secondsElement = document.getElementById('seconds')
-
-    timerInterval = setInterval(() => {
-        seconds++
-        if (seconds === 60) {
-            seconds = 0
-            minutes++
-        }
-        gameTime = minutes * 60 + seconds
-        // @ts-ignore
-        minutesElement.textContent = minutes < 10 ? `0${minutes}.` : minutes
-         // @ts-ignore
-        secondsElement.textContent = seconds < 10 ? `0${seconds}` : seconds
-    }, 1000)
-    return gameTime
-}
-
-export function stopTimer() {
-    clearInterval(timerInterval)
-}
