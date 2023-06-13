@@ -108,7 +108,7 @@ export function renderGamePageComponent({ appEl, goToPage, playCards }) {
 
                         if (matchedPairs === playCards.length / 2) {
                             setTimeout(() => {
-                                stopTimer()
+                                stopTimer();
                                 game.gameTime = gameTime
                                 game.gameStatus = RESULT_PAGE
                                 game.isWin = true
@@ -117,7 +117,7 @@ export function renderGamePageComponent({ appEl, goToPage, playCards }) {
                         }
                     } else {
                         setTimeout(() => {
-                            stopTimer()
+                            stopTimer();
                             game.gameTime = gameTime
                             game.gameStatus = RESULT_PAGE
                             game.isWin = false

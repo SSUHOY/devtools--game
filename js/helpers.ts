@@ -4,9 +4,7 @@ export interface Card {
 }
 export let cardDesk = []
 export function createDeck(difficulty) {
-    
-
-    console.log(difficulty);
+    console.log(difficulty)
     const suits = ['Diamonds', 'Hearts', 'Clubs', 'Spades']
     const ranks = ['A', 'K', 'Q', 'J', '10', '9', '8', '7', '6']
 
@@ -19,20 +17,19 @@ export function createDeck(difficulty) {
     cardDesk = compareRandom(cardDesk)
         .slice(0, difficulty * 3)
         .flatMap((card) => [card, { ...card }] as const)
-        console.log(cardDesk);
-    return compareRandom(cardDesk) as Card[];
+    console.log(cardDesk)
+    return compareRandom(cardDesk) as Card[]
 }
-
 
 function compareRandom(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]]
+        const j = Math.floor(Math.random() * (i + 1))
+        ;[arr[i], arr[j]] = [arr[j], arr[i]]
     }
     return arr
 }
 
-let timerInterval = null
+let timerInterval: number
 export let gameTime = 0
 
 export function startTimer() {
@@ -41,7 +38,7 @@ export function startTimer() {
     const minutesElement = document.getElementById('minutes')
     const secondsElement = document.getElementById('seconds')
 
-    timerInterval = setInterval(() => {
+    timerInterval = window.setInterval(() => {
         seconds++
         if (seconds === 60) {
             seconds = 0
