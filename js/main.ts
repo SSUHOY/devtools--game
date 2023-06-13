@@ -25,6 +25,8 @@ export const game: Game = {
     isWin: null,
 }
 
+console.log(game.difficulty);
+
 const goToPage = (newPage: string) => {
     if ([DIFFICULTY_PAGE, GAME_PAGE, RESULT_PAGE].includes(newPage)) {
         if (newPage === DIFFICULTY_PAGE) {

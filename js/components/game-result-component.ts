@@ -2,7 +2,7 @@ import { DIFFICULTY_PAGE } from '../routes'
 import { game } from '../main'
 import { stopTimer } from '../helpers'
 
-stopTimer();
+
 
 export function renderResultMessagePageComp({
     appEl,
@@ -11,7 +11,6 @@ export function renderResultMessagePageComp({
     appEl: HTMLElement
     goToPage: (page: string) => void
 }) {
-    
     const minutes = Math.floor(game.gameTime / 60)
     const seconds = game.gameTime % 60
 
