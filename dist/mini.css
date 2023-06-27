@@ -1,4 +1,21 @@
+/*!*******************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./scss/styles.css ***!
+  \*******************************************************************/
 @charset "UTF-8";
+
+@keyframes zoom-animation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
 
 @keyframes zoom-animation {
     0% {
@@ -20,6 +37,7 @@
     border-radius: 12px;
     color: white;
     font-size: 24px;
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
     font-family: StratosSkyeng;
     background-color: #7ac100;
     cursor: pointer;
@@ -30,6 +48,7 @@ ul {
 }
 
 .time {
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
     font-family: StratosSkyeng;
     color: white;
     margin-left: 40px;
@@ -40,6 +59,7 @@ ul {
 }
 
 .timer {
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
     font-family: StratosSkyeng;
     color: white;
     font-size: 64px;
@@ -51,34 +71,10 @@ ul {
     padding-bottom: 35px;
 }
 
-.cards,
-.card,
-.view,
-.details,
-p {
-    align-items: center;
-}
-
-.cards {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    gap: 15px;
-}
-
-@keyframes zoom-animation {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.2);
-    }
-
-    100% {
-        transform: scale(1);
-    }
+.card {
+    position: relative;
+    transition: transform 0.5s ease;
+    box-sizing: border-box;
 }
 
 .card.visible .card__back {
@@ -99,21 +95,21 @@ p {
     grid-template-columns: repeat(12, 1fr);
 }
 
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    perspective: 1000px;
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
 .card {
     position: relative;
     transition: transform 0.5s ease;
     box-sizing: border-box;
 }
 
-.card__back {
-    height: 133px;
-    border-radius: 4px;
-    width: 95px;
-    backface-visibility: hidden;
-    transform: rotateY(0);
-    transition: transform 500ms ease-in-out;
-}
-
+/* stylelint-disable-next-line no-descending-specificity */
 .card__front {
     display: flex;
     justify-content: center;
@@ -165,73 +161,6 @@ p {
     height: 6px;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: none;
-    box-sizing: border-box;
-}
-
-.center {
-    padding: 22px calc(50% - 490px) 22px calc(50% - 490px);
-}
-
-.winimg {
-    width: 96px;
-    height: 96px;
-}
-
-.img-block {
-    text-align: center;
-    padding-top: 31px;
-    padding-bottom: 5px;
-}
-
-.main {
-    display: flex;
-    flex-direction: column;
-    width: 480px;
-    background-color: #c2f5ff;
-    height: 459px;
-    border-radius: 12px;
-}
-
-.result-box__title {
-    font-family: StratosSkyeng;
-    font-size: 40px;
-    color: #004980;
-    text-align: center;
-    padding-bottom: 26px;
-}
-
-.time-result {
-    display: flex;
-    justify-content: center;
-}
-
-.timer_title {
-    font-family: StratosSkyeng;
-    text-align: center;
-    padding-bottom: 10px;
-}
-
-.timer__block {
-    font-family: StratosSkyeng;
-    font-size: 64px;
-    color: black;
-}
-
-.timer__dot {
-    font-family: StratosSkyeng;
-    color: black;
-}
-
-.btn-container {
-    text-align: center;
-    margin-top: 40px;
-}
-
 @font-face {
     font-family: StratosSkyeng;
     font-style: normal;
@@ -239,8 +168,8 @@ p {
 
     /* поиск шрифта локально */
     src: local('StratosSkyeng'),
-        url('/fonts/stratosskyengweb-regular.woff2') format('woff2'),
-        url('/fonts/stratosskyengweb-regular.woff') format('woff');
+        url(ce93393e831d32412096.woff2) format('woff2'),
+        url(d7d99bd522cf2d77ce4a.woff) format('woff');
 }
 
 * {
@@ -308,6 +237,7 @@ p {
     font-size: 48px;
     line-height: 72px;
     color: #0080c1;
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
     font-family: StratosSkyeng;
 }
 
@@ -330,6 +260,7 @@ p {
     margin-bottom: 48px;
     margin-left: 136px;
     margin-right: 136px;
+    /* stylelint-disable-next-line declaration-empty-line-before */
     font-family: StratosSkyeng;
 }
 
@@ -344,6 +275,7 @@ p {
     border-radius: 12px;
     color: white;
     font-size: 24px;
+    /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
     font-family: StratosSkyeng;
     background-color: #7ac100;
     cursor: pointer;
@@ -378,3 +310,6 @@ p {
     font-size: 24px;
     font-family: StratosSkyeng;
 }
+
+
+/*# sourceMappingURL=mini.css.map*/

@@ -1,7 +1,7 @@
-import { game } from '../main.js'
-import { GAME_PAGE } from '../routes.js'
-import { createDeck } from '../helpers.js'
 
+import { game } from '../main'
+import { GAME_PAGE } from '../routes'
+import { createDeck } from '../helpers'
 export function renderDifficultPageComponent({ appEl, goToPage }) {
     const appHtml = `<div class="difficult__items-block center">
     <form class="container">
@@ -37,7 +37,6 @@ export function renderDifficultPageComponent({ appEl, goToPage }) {
     const difficultyBtnElements = document.querySelectorAll(
         '.difficult__values-buttons'
     )
-
     let prevSelectedBtn = null
 
     difficultyBtnElements.forEach((difficultyBtnEl) => {
@@ -50,7 +49,6 @@ export function renderDifficultPageComponent({ appEl, goToPage }) {
             prevSelectedBtn = difficultyBtnEl
         })
     })
-
     difficultyFormEl.addEventListener('submit', (e) => {
         e.preventDefault()
         const selectedDifficultyBtn = difficultyFormEl.querySelector(
